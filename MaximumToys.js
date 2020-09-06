@@ -1,21 +1,19 @@
 // Complete the maximumToys function below.
 function maximumToys(prices, k) {
-  let toys = 0;
-  let sum = 0;
+    let toys = 0;
+    let sum = 0;
 
-  // for each element of array 
-  prices.forEach(price => {
-      // add the price to total sum
-      sum += price;
-      toys++;
+    const sortedPrices = prices.sort((a, b) => a - b);
+    
+    sortedPrices.forEach(price => {        
+        sum += price;
+        toys++;
 
-      // if the budget is not enough, do not buy this toy
-      if (sum > k) {            
-          sum -= price;
-          // the toy is removed from the list
-          toys--;
-      }
-  }); 
+        if (sum > k) {            
+            sum -= price;            
+            toys--;
+        }
+    }); 
 
-  return toys;
+    return toys;
 }
