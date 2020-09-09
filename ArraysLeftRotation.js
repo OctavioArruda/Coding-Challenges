@@ -4,10 +4,10 @@ function rotLeft(a, d) {
 
     if (a.length === 0) return output;
 
-    for (let rotations = 0; rotations < d; rotations++){    // d times rotation
-        frontNum = a.shift();   // takes the first element of array, put it on the frontNum var
-        // and deletes it from array.
-        a.push(frontNum);   // push it onto the last position of array
+    for (let rotations = 0; rotations < d; rotations++) {    
+		
+        frontNum = a.shift();          
+        a.push(frontNum);   
     }
 
     return a;
